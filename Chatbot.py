@@ -6,10 +6,16 @@ with st.sidebar:
     openai_api_key = st.text_input("OpenAI API Key", key="chatbot_api_key", type="password")
     "[Get an OpenAI API key](https://platform.openai.com/account/api-keys)"
     "[View the source code](https://github.com/streamlit/llm-examples/blob/main/Chatbot.py)"
-    "[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/streamlit/llm-examples?quickstart=1)"
+    #"[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/streamlit/llm-examples?quickstart=1)"
 
-st.title("💬🌱 Chat With Me!")
-st.caption("🚀 A Streamlit chatbot powered by Groq and Intel")
+col1, col2 = st.columns([1, 4])
+with col1:
+    st_lottie("https://lottie.host/88559120-c6dc-40b2-ab08-4de3f326aa57/xWPx9if7jC.json", height=120, width=120)
+
+with col2:
+    st.title("Personify Me")
+
+st.caption("💖 Connect with your plant using emotive AI")
 if "messages" not in st.session_state:
     st.session_state["messages"] = [{"role": "assistant", "content": "How can I help you?"}]
 
