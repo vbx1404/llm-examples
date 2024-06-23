@@ -5,8 +5,7 @@ from streamlit_lottie import st_lottie
 with st.sidebar:
     openai_api_key = st.text_input("OpenAI API Key", key="chatbot_api_key", type="password")
     "[Get an OpenAI API key](https://platform.openai.com/account/api-keys)"
-    "[View the source code](https://github.com/streamlit/llm-examples/blob/main/Chatbot.py)"
-    #"[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/streamlit/llm-examples?quickstart=1)"
+    #"[View the source code](https://github.com/streamlit/llm-examples/blob/main/Chatbot.py)"
 
 col1, col2 = st.columns([1, 4])
 with col1:
@@ -15,10 +14,7 @@ with col1:
 with col2:
     st.title("Personify Me")
 
-#st.caption("💖 Connect with your plant using emotive AI")
-
 st.subheader('✨ Connect with your plant using emotive AI', divider='rainbow')
-#st.subheader('_Streamlit_ is :blue[cool] :sunglasses:')
 
 if "messages" not in st.session_state:
     st.session_state["messages"] = [{"role": "assistant", "content": "How can I help you?"}]
