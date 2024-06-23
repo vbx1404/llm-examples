@@ -1,6 +1,13 @@
 from openai import OpenAI
 import streamlit as st
 from streamlit_lottie import st_lottie
+import requests
+import cv2
+
+from PIL import Image
+
+# Create a VideoCapture object
+cap = cv2.VideoCapture(0)
 
 with st.sidebar:
     openai_api_key = st.text_input("OpenAI API Key", key="chatbot_api_key", type="password")
@@ -15,6 +22,19 @@ with col2:
     st.title("Pair.ai")
 
 st.subheader('✨ Breathe life into everyday objects with emotive AI', divider='rainbow')
+
+def take_photo():
+    # Capture a frame from the webcam
+    ret, frame = cap.read()
+    # Convert the image to RGB
+    frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+
+    # Create a PIL image from the OpenCV image
+    pil_image = Image.fromarray(frame)
+    st.image(pil_image)
+    # response = requests.post("https://ae6e-146-152-225-40.ngrok-free.app/upload/image/", files=)
+
+
 st.button("Take a Photo", type="primary")
 
 
