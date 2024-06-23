@@ -9,12 +9,14 @@ with st.sidebar:
 
 col1, col2 = st.columns([1, 4])
 with col1:
-    st_lottie("https://lottie.host/88559120-c6dc-40b2-ab08-4de3f326aa57/xWPx9if7jC.json", height=120, width=120)
+    st_lottie("https://lottie.host/88559120-c6dc-40b2-ab08-4de3f326aa57/xWPx9if7jC.json", height=100, width=100)
 
 with col2:
     st.title("Pair.ai")
 
 st.subheader('✨ Breathe life into everyday objects with emotive AI', divider='rainbow')
+st.button("Take a Photo", type="primary")
+
 
 if "messages" not in st.session_state:
     st.session_state["messages"] = [{"role": "assistant", "content": "How can I help you?"}]
